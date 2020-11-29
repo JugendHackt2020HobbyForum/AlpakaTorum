@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Sign In</title>
+</head>
+
+<style>
+    body {
+        height: 900px;
+        border: 50px solid #fab005;
+        padding: 50px;
+        margin: 0px;
+    }
+
+    body {
+        background-color: darkgray;
+    }
+</style>
+
+<body>
+    <script>
+        function getPassword() {
+            var password = document.getElementById("pass").value;
+            var username = document.getElementById("username").value;
+            var userdata = [
+                {name: "Merlin Wolff", password: "JavaScript"},
+                {name: "Luis Schuimer", password: "w3schools123"}
+            ];
+
+            if(userdata.find(i=>i.name===username && i.password===password) ){
+                window.open("hauptseite.html", "_self")
+            }
+    
+        }
+    </script>
+    <br>
+    <br>
+    <center>
+        <img src="images/Alpakatorum.PNG">
+        <h1>Melde dich jetzt bei AlpakaTorum an!</h1>
+        <form action="hauptseite.html">
+            <div>
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" required>
+            </div>
+            
+            <div>
+                <label for="pass">Password:</label> <br>
+                <input type="password" id="pass" name="password"
+                       minlength="8" required> <br>
+            </div><br>
+            
+            <button type="button" onclick="getPassword()">Einloggen</button>
+        </form>
+    </center>
+
+</body>
+
+</html>
