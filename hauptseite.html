@@ -1,0 +1,246 @@
+<html>
+    <style>
+        h1 {
+            font-size: 65px;
+        }
+    
+        h2 {
+            font-size: 55px;
+        }
+    
+    
+        p {
+            font-size: 50px;
+        }
+    
+    
+        body {
+            height: 100vh;
+            border: 50px solid #fab005;
+            padding: 50px;
+            margin: 0px;
+        }
+    
+        body {
+            background-color: darkgray;
+        }
+    
+        button {
+            margin-left: 50px;
+        margin-top: 0px;
+        width: 250px;
+        height: 95px;   
+        background: #fab005;
+        border: none;
+        color: black;   
+        font-size: 65px;
+        font-weight:600;
+        }
+    
+    </style>
+      
+<head>
+<meta content="text/html; charset=ISO-8859-1"
+http-equiv="content-type">
+<title>index.html</title>
+<style type="text/css"></style>
+</head>
+<body>
+<h1><span style="text-decoration: underline;"></span></h1>
+<h1 style="color: rgb(0, 0, 153);"><span
+style="text-decoration: underline;">AlpakaTorum</span></h1>
+&nbsp;
+<span style="text-decoration: underline;"></span><br>
+<ol>
+</ol>
+<h1><span style="text-decoration: underline;"></span><br>
+</h1>
+Beispielhobbys die wir unterstützen:<br>
+<br>
+<input id="myInput" onkeyup="myFunction()"
+placeholder="Nach Hoppys suchen" type="text"><br>
+Letztes mal aktualliesiert:<br>
+Vor 1 Sekunde <br>
+&nbsp;&nbsp;
+<table style="width: 1594px; height: 248px;" id="myTable">
+<tbody>
+<tr class="header">
+<th style="width: 10%;">Hobbyname<br>
+</th>
+<th style="width: 5%;">Chatrooms<br>
+</th>
+<th style="width: 25%;">Aktuelle Nutzer in den Chatrooms<br>
+</th>
+</tr>
+<tr>
+<td>Fußball<br>
+</td>
+<td>3<br>
+</td>
+<td>15 Personen<br>
+</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td> Kanu<br>
+</td>
+<td>1<br>
+</td>
+<td>4 Personen <br>
+</td>
+</tr>
+<tr>
+<td>Programmieren<br>
+</td>
+<td>2<br>
+</td>
+<td>10 Personen <br>
+</td>
+</tr>
+<tr>
+<td>Basketball<br>
+</td>
+<td>3<br>
+</td>
+<td>20 Personen<br>
+</td>
+</tr>
+<tr>
+<td>Einrad<br>
+</td>
+<td>1<br>
+</td>
+<td>5 Personen<br>
+</td>
+</tr>
+<tr>
+<td>Schwimmen<br>
+</td>
+<td>2<br>
+</td>
+<td>14 Peronen<br>
+</td>
+</tr>
+<tr>
+<td>Alle<br>
+</td>
+<td>5<br>
+</td>
+<td>50 Peronen<br>
+</td>
+</tr>
+<tr>
+<td>Tanzen<br>
+</td>
+<td>3<br>
+</td>
+<td>20 Personen<br>
+</td>
+</tr>
+</tbody>
+</table>
+<script>
+function myFunction() {
+// Declare variables
+var input, filter, table, tr, td, i, txtValue;
+input = document.getElementById("myInput");
+filter = input.value.toUpperCase();
+table = document.getElementById("myTable");
+tr = table.getElementsByTagName("tr");
+
+// Loop through all table rows, and hide those who don't match the search query
+for (i = 0; i < tr.length; i++) {
+td = tr[i].getElementsByTagName("td")[0];
+if (td) {
+txtValue = td.textContent || td.innerText;
+if (txtValue.toUpperCase().indexOf(filter) > -1) {
+tr[i].style.display = "";
+} else {
+tr[i].style.display = "none";
+}
+}
+}
+}
+</script>
+<script></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+margin: 0 auto;
+max-width: 800px;
+padding: 0 20px;
+}
+
+.container {
+border: 2px solid #dedede;
+background-color: #f1f1f1;
+border-radius: 5px;
+padding: 10px;
+margin: 10px 0;
+}
+
+.darker {
+border-color: #ccc;
+background-color: #ddd;
+}
+
+.container::after {
+content: "";
+clear: both;
+display: table;
+}
+
+.container img {
+float: left;
+max-width: 60px;
+width: 100%;
+margin-right: 20px;
+border-radius: 50%;
+}
+
+.container img.right {
+float: right;
+margin-left: 20px;
+margin-right:0;
+}
+
+.time-right {
+float: right;
+color: #aaa;
+}
+
+.time-left {
+float: left;
+color: #999;
+}
+</style>
+<title>index.html</title>
+<h2>Chat Beispiel</h2>
+<div class="container"> <img src="/w3images/bandmember.jpg">
+<h2>Paul</h2>
+<alt="Avatar" style="width: 100%;" &gt;=""></alt="Avatar">
+<p>Hi. Wie ist dein Hobby eigentlich?</p>
+<span class="time-right">15:43</span>
+</div>
+<div class="container darker"> <img src="/w3images/avatar_g2.jpg">
+<h2>Marius</h2>
+<alt="Avatar" class="right" style="width: 100%;" &gt;=""></alt="Avatar">
+<p>Hey!Mein Hobby ist super! Ich spiele Basketball<span
+class="time-left">15:45</span>
+</p>
+</div>
+<div class="container"> <img src="/w3images/bandmember.jpg">
+<h2>Paul</h2>
+<alt; alt="Avatar" style="width: 100%;" &gt;=""></alt;>
+<p>WOW ich möchte soetwas auch machen!</p>
+<span class="time-right">15:46</span>
+</div>
+<div class="container darker"> <img src="/w3images/avatar_g2.jpg"
+alt="Avatar" class="right" style="width: 100%;">
+<h2>Marius</h2>
+<p>Ja, du kannst gerne auch bei uns in den Verein kommen</p>
+<span class="time-left">15:50</span>
+</div>
+</body>
+</html>
