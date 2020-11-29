@@ -21,18 +21,30 @@
 
 <body>
     <script>
-        function getPassword() {
+        async function digestMessage(message) {
+            const msgUint8 = new TextEncoder().encode(message); // encode as (utf-8) Uint8Array
+            const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8); // hash the message
+            const hashArray = Array.from(new Uint8Array(hashBuffer)); // convert buffer to byte array
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
+            return hashHex;
+        }
+
+        async function getPassword() {
             var password = document.getElementById("pass").value;
+            passwordHash = await digestMessage(password);
+            console.log(passwordHash);
             var username = document.getElementById("username").value;
             var userdata = [
-                {name: "Merlin Wolff", password: "JavaScript"},
-                {name: "Luis Schuimer", password: "w3schools123"}
+                { name: "Merlin", passwordHash: "b27ad06d123c6145fba7e9217a4cfbf2488b4743810ed8c8ff14ad01a5bbe515" },
+                { name: "Luis", passwordHash: "bec5ad6fe46d3be964f99741d66c0f84fe2a48db4d34abe311d6797f397fde2e" },
             ];
 
-            if(userdata.find(i=>i.name===username && i.password===password) ){
+            if (userdata.find(i => i.name === username && i.passwordHash === passwordHash)) {
                 window.open("hauptseite.html", "_self")
             }
-    
+
+
+
         }
     </script>
     <br>
@@ -45,13 +57,12 @@
                 <label for="username">Username:</label><br>
                 <input type="text" id="username" name="username" required>
             </div>
-            
+
             <div>
                 <label for="pass">Password:</label> <br>
-                <input type="password" id="pass" name="password"
-                       minlength="8" required> <br>
+                <input type="password" id="pass" name="password" minlength="8" required> <br>
             </div><br>
-            
+
             <button type="button" onclick="getPassword()">Einloggen</button>
         </form>
     </center>
